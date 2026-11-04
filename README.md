@@ -14,3 +14,4 @@ https://xmeetexe.github.io/WaveBox/
 
 ## Publish
 In **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/(root)**, then save. This site is static and has no build dependencies.
+
