@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Wavebox for Android. Discover, select and play in one focused experience.">
+<meta property="og:title" content="Wavebox — Discover. Select. Play.">
+<meta property="og:description" content="Wavebox 1.0.1 for Android by XmeetEXE.">
+<meta property="og:image" content="https://raw.githubusercontent.com/XmeetEXE/WaveBox/main/assets/wavebox-logo.jpg">
+<link rel="icon" type="image/jpeg" href="./assets/wavebox-logo.jpg">
+<title>Wavebox — Discover. Select. Play.</title>
+<style>
+:root{color-scheme:dark;--bg:#050505;--fg:#f5f5f5;--muted:#a2a2a2;--line:#ffffff1b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 72% 37%,#34343435 0,transparent 38%),radial-gradient(ellipse at 15% 88%,#24242425 0,transparent 34%)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1140px,calc(100% - 48px));margin:auto}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand img{display:block;width:118px;height:60px;object-fit:contain}
+.nav{display:flex;align-items:center;gap:28px}.nav a{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#c4c4c4}.nav .cta-nav{padding:12px 17px;border:1px solid #ffffff35;border-radius:3px;color:#fff}
+.hero{min-height:calc(100vh - 89px);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px;padding:58px 0 75px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#d0d0d0;font-size:10px;letter-spacing:.2em;text-transform:uppercase}.dot{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 16px #fff}
+h1{font-size:clamp(62px,7.3vw,96px);line-height:.91;letter-spacing:-.085em;font-weight:560;margin:28px 0 24px}h1 span{display:block;color:#898989;font-weight:350}
+.intro{max-width:440px;color:#aaa;font-size:15px;line-height:1.9;margin:0 0 31px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{min-height:51px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:3px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:750;transition:transform .2s}.btn:hover{transform:translateY(-2px)}
+.primary{background:#f2f2f2;color:#080808}.secondary{border:1px solid #ffffff35;background:#ffffff05}
+.meta{margin-top:17px;color:#727272;font-size:11px;line-height:1.8}
+.visual{min-height:470px;position:relative;display:grid;place-items:center}.halo{position:absolute;width:72%;aspect-ratio:1;border-radius:50%;background:#aaa;opacity:.11;filter:blur(85px)}
+.logo-card{position:relative;width:min(100%,510px);padding:25px 18px;border:1px solid #ffffff1a;background:linear-gradient(145deg,#ffffff0c,#ffffff02);box-shadow:0 35px 100px #000;border-radius:8px;display:grid;place-items:center}
+.logo-card:before{content:"";position:absolute;inset:8px;border:1px solid #ffffff0b;border-radius:4px;pointer-events:none}
+.hero-logo{display:block;width:min(100%,420px);height:auto;object-fit:contain;filter:drop-shadow(0 12px 45px #ffffff18)}
+.visual-caption{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);white-space:nowrap;color:#797979;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;padding:20px 0 25px;border-bottom:1px solid var(--line)}
+.section-head h2{font-size:clamp(25px,4vw,39px);letter-spacing:-.055em;font-weight:450;margin:0}.section-head p{max-width:350px;color:#898989;font-size:12px;line-height:1.8;margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0 0 84px;border-bottom:1px solid var(--line)}
+.feature{padding:28px 24px 24px 0;border-right:1px solid var(--line)}.feature+.feature{padding-left:24px}.feature:last-child{border:0}
+.symbol{font-size:22px;color:#dedede;margin-bottom:23px}.feature h3{font-size:14px;font-weight:600;margin:0 0 11px}.feature p{max-width:290px;color:#929292;font-size:12px;line-height:1.9;margin:0}
+.download-band{margin:64px 0 72px;padding:30px 32px;border:1px solid var(--line);background:linear-gradient(110deg,#ffffff0b,#ffffff02);display:flex;align-items:center;justify-content:space-between;gap:25px}
+.download-band h2{font-size:clamp(23px,3.6vw,34px);letter-spacing:-.05em;font-weight:450;margin:0 0 8px}.download-band p{color:#8f8f8f;font-size:12px;line-height:1.7;margin:0}
+footer{padding:24px 0;color:#737373;font-size:10px;letter-spacing:.06em}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}footer a{color:#d0d0d0}
+@media(max-width:760px){.wrap{width:min(100% - 34px,570px)}header{height:72px}.brand img{width:103px;height:54px}.nav{gap:13px}.nav a{font-size:9px}.nav .optional{display:none}.nav .cta-nav{padding:10px 12px}.hero{min-height:auto;grid-template-columns:1fr;gap:8px;padding:45px 0 55px}.visual{order:0;min-height:220px;margin:0 auto 22px;width:100%;max-width:440px}.logo-card{padding:13px 8px}.hero-logo{width:min(100%,320px)}.visual-caption{bottom:-17px}.hero-copy{order:1}h1{font-size:clamp(58px,14vw,82px);margin:23px 0}.intro{font-size:14px}.section-head{display:block;padding-bottom:19px}.section-head p{margin-top:12px}.features{grid-template-columns:1fr;padding-bottom:35px}.feature,.feature+.feature{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.feature:last-child{border:0}.symbol{margin-bottom:13px}.download-band{margin:42px 0 50px;padding:24px 20px;display:block}.download-band .btn{margin-top:19px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<a class="brand" href="./" aria-label="Wavebox home"><img src="./assets/wavebox-logo.jpg" alt="Wavebox"></a>
+<nav class="nav" aria-label="Main navigation"><a class="optional" href="#experience">Experience</a><a class="optional" href="https://github.com/XmeetEXE/WaveBox">Source ↗</a><a class="cta-nav" href="https://github.com/XmeetEXE/WaveBox/releases/download/1.0.1/Wavebox-1.0.1-arm64-v8a.apk">Download ↓</a></nav>
+</header>
+<main class="wrap">
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow"><span class="dot"></span> ANDROID APPLICATION · VERSION 1.0.1</div>
+<h1>Discover.<br><span>Select. Play.</span></h1>
+<p class="intro">Wavebox brings discovery, source selection and playback together in one focused Android experience. Built by XmeetEXE.</p>
+<div class="actions"><a class="btn primary" href="https://github.com/XmeetEXE/WaveBox/releases/download/1.0.1/Wavebox-1.0.1-arm64-v8a.apk">↓ &nbsp; Download Wavebox 1.0.1</a><a class="btn secondary" href="https://github.com/XmeetEXE/WaveBox/releases">All releases ↗</a></div>
+<p class="meta">Free APK download · ARM64 Android devices<br>Internet connection required for online features.</p>
+</div>
+<div class="visual" aria-label="Wavebox logo"><div class="halo"></div><div class="logo-card"><img class="hero-logo" src="./assets/wavebox-logo.jpg" alt="Wavebox logo" width="176" height="89"></div><div class="visual-caption">A focused Android experience · XMEETEXE</div></div>
+</section>
+<div class="section-head" id="experience"><h2>Everything in one flow.</h2><p>A clean experience that keeps the journey simple, from finding something to watch to starting playback.</p></div>
+<section class="features" aria-label="Wavebox highlights">
+<article class="feature"><div class="symbol">⌕</div><h3>Discover</h3><p>Explore titles and find what you are looking for with a focused discovery experience.</p></article>
+<article class="feature"><div class="symbol">◈</div><h3>Choose a source</h3><p>View available playback sources and choose the option that works for you.</p></article>
+<article class="feature"><div class="symbol">▶</div><h3>Press play</h3><p>Move into playback with a straightforward interface designed for Android.</p></article>
+</section>
+<section class="download-band" aria-label="Download Wavebox"><div><h2>Wavebox 1.0.1 is ready.</h2><p>Android APK · ARM64 · Published by XmeetEXE</p></div><a class="btn primary" href="https://github.com/XmeetEXE/WaveBox/releases/download/1.0.1/Wavebox-1.0.1-arm64-v8a.apk">Download APK ↓</a></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 WAVEBOX · BUILT BY XMEETEXE</span><span><a href="https://github.com/XmeetEXE/WaveBox/releases">Releases</a> &nbsp;·&nbsp; <a href="https://github.com/XmeetEXE/WaveBox">GitHub</a></span></div></footer>
+</body>
+</html>
